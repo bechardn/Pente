@@ -330,7 +330,7 @@ public class PenteGameBoard extends JPanel implements MouseListener{
 	{
 		if(whichPlayer == this.PLAYER1_TURN && this.player1IsComputer)
 		{
-			int[] nextMove = this.p1ComputerPlayer.getComputerMover();
+			int[] nextMove = this.p1ComputerPlayer.getComputerMove();
 			int newR = nextMove[0];
 			int newC = nextMove[1];
 			gameBoard[newR][newC].setState(playerTurn);
@@ -347,7 +347,7 @@ public class PenteGameBoard extends JPanel implements MouseListener{
 			
 		}else if(whichPlayer == this.PLAYER2_TURN && this.player2IsComputer)
 		{
-			int[] nextMove = this.p2ComputerPlayer.getComputerMover();
+			int[] nextMove = this.p2ComputerPlayer.getComputerMove();
 			int newR = nextMove[0];
 			int newC = nextMove[1];
 			gameBoard[newR][newC].setState(playerTurn);
@@ -378,6 +378,24 @@ public class PenteGameBoard extends JPanel implements MouseListener{
 				} else
 				{
 					darkStoneMove2Taken = true;
+				}
+		}
+		
+		return dsp;
+	}
+	
+	public boolean darkSquareProblemComputerMoveList(int r, int c)
+	{
+		boolean dsp = false;
+		
+		if((darkStoneMove2Taken == false) && (playerTurn == BLACKSTONE))
+		{	
+			if((r >= INNER_START && r <= INNER_END) && (c >= INNER_START && c <= INNER_END))
+				{
+					dsp = true;
+				} else
+				{
+					//darkStoneMove2Taken = true;
 				}
 		}
 		
@@ -578,37 +596,12 @@ public class PenteGameBoard extends JPanel implements MouseListener{
 	{
 		return gameBoard;
 	}
+	
+	public boolean getDarkStone2Taken()
+	{
+		return darkStoneMove2Taken;
+	}
 		
 		
 	
-//	public void updateSizes()
-//	{
-//		if(myFrame.getWidth() != bWidth || myFrame.getHeight() != bHeight + 20)
-//		{
-//			bWidth = myFrame.getWidth();
-//			bHeight = myFrame.getHeight() - 20;
-//			
-//			squareW = bwidth / this.NUM_SQUARES_SIDE;
-//			squareH = bHeight / this.NUM_SQUARES_SIDE;
-//			
-//			resetSquares(squareW, squareH);
-//		}
-//	}
-//	
-//	public void resetSquares(int w, int h)
-//	{
-//		for(int row = 0; row < NUM_SQUARES_SIDE; row++)
-//		{
-//			for(int col = 0; col < NUM_SQUARES_SIDE; col++)
-//			{
-//				gameBoard[row][col].setXLoc(col * w);
-//				gameBoard[row][col].setYLoc(row * h);
-//				gameBoard[row][col].setWidth(w);
-//				gameBoard[row][col].setHeight(h);
-//
-//
-//			}
-//		}
-//	}
-
 }
