@@ -70,7 +70,7 @@ public class ComputerMoveGenerator {
 			
 			if(moves.get(0).getPriority() <= this.ONE_IN_A_ROW_DEF) 
 			{
-				ourMove = moves.get((int)(Math.random()*moves.size()));
+				ourMove = moves.get((int)(Math.random() * moves.size()));
 			} else
 			{
 				ourMove = moves.get(0);
@@ -95,6 +95,7 @@ public class ComputerMoveGenerator {
 				{
 					newBStoneProbRow = (int)(Math.random() * (innerSafeSquareSideLen + 2) ) 
 										+ (innerSafeSquareSideLen + 1);
+					
 					newBStoneProbCol = (int)(Math.random() * (innerSafeSquareSideLen + 2) ) 
 							+ (innerSafeSquareSideLen + 1);
 					

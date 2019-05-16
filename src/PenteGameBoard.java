@@ -17,7 +17,7 @@ public class PenteGameBoard extends JPanel implements MouseListener{
 	public static final int PLAYER1_TURN = 1;
 	public static final int PLAYER2_TURN = -1;
 	public static final int MAX_CAPTURES = 5;
-	public static final int SLEEP_TIME = 100;
+	public static final int SLEEP_TIME = 250;
 
 
 	
